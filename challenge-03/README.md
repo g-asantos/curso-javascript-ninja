@@ -115,59 +115,71 @@ Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
+pessoa.mostrarIdade()
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+
+pessoa.mostrarPeso()
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+
+pessoa.mostrarAltura()
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-?
+
+pessoa.idade += 3;
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-?
+
+pessoa.mostrarIdade()
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+
+pessoa.andar(200);
+pessoa.andar(50);
+pesso.andar(10);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+
+console.log(pessoa.andando)
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+
+pessoa.parar()
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+
+console.log(pessoa.andando)
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+
+260
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -186,8 +198,28 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
 
+pessoa.apresentacao = function(){
+  var phrase;
+  var sexPhrase = "Olá, eu sou o";
+  var agePhrase = " anos, meu peso é ";
+  var walkPhrase = " metros";
+  
+  if(pessoa.sexo === "Feminino"){
+  
+  sexPhrase = "Olá, eu sou a "
+  }
+  
+  if(pessoa.idade === 1){
+    agePhrase = " ano, meu peso é "
+  }
+  
+  if(pessoa.caminhoQuantosMetros === 1){
+    walkPhrase = " metro"
+  }
+  
+  return sexPhrase + pessoa.nomeCompleto() + ", tenho" + pessoa.idade + agePhrase + pessoa.peso + "e, só hoje, eu já caminhei " +     pessoa.caminhoQuantosMetros" + walkPhrase;
+}
 // Agora, apresente-se ;)
-?
-```
+
+pessoa.apresentacao();
